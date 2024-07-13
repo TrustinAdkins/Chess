@@ -1,6 +1,0 @@
-﻿  Chess.cpp
-  ChessBoard.cpp
-  Stockfish.cpp
-C:\Users\Trust\source\repos\Chess_7.13.2024\Chess\Stockfish.cpp(147,53): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
-  Generating Code...
-  Chess.vcxproj -> C:\Users\Trust\source\repos\Chess_7.13.2024\x64\Debug\Chess.exe

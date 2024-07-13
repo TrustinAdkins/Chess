@@ -15,7 +15,7 @@ int main() {
   Stockfish stockfish;
   ChessBoard chessboard;
 
-  bool aiEnabled = false;
+  bool aiEnabled = true; 
   bool aiTurn = false;
   bool whiteTurn = true;
 
@@ -49,7 +49,7 @@ int main() {
 
     if (moveMade) {
       if (!aiTurn)
-        stockfish.PlayMove(move);  // tell stockfish person played move
+        stockfish.PlayMove(move);
 
       whiteTurn = !whiteTurn;
       if (aiEnabled) aiTurn = !aiTurn;
