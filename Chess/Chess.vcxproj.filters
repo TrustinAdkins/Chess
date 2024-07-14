@@ -27,6 +27,9 @@
     <ClCompile Include="ChessBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stockfish.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="d3dx12\d3dx12_state_object.h">
       <Filter>Header Files\d3dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

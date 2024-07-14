@@ -1,7 +1,9 @@
-#include <iostream> //7.13.2024 #3:58 PM test commit
+#include <iostream>
+#include <Windows.h>
 
 #include "ChessBoard.h"
 #include "Stockfish.h"
+#include "Log.h"
 
 std::string CoordToString(Coord coord) {
   return "" + (char)(97 + coord.col) + (char)(48 + 8 - coord.row);
@@ -11,11 +13,12 @@ Coord StringToCoord(std::string coord) {
   return {8 - (coord[1] - 48), coord[0] - 97};
 }
 
-int main() {
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
   Stockfish stockfish;
   ChessBoard chessboard;
+  g::Logger::init();
 
-  bool aiEnabled = true; 
+  bool aiEnabled = false; 
   bool aiTurn = false;
   bool whiteTurn = true;
 
@@ -61,5 +64,6 @@ int main() {
     }
   }
 
+  g::Logger::deinit();
   return 0;
 }
