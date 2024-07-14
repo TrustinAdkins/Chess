@@ -1,9 +1,10 @@
-#include <iostream>
 #include <Windows.h>
 
+#include <iostream>
+
 #include "ChessBoard.h"
-#include "Stockfish.h"
 #include "Log.h"
+#include "Stockfish.h"
 
 std::string CoordToString(Coord coord) {
   return "" + (char)(97 + coord.col) + (char)(48 + 8 - coord.row);
@@ -13,14 +14,17 @@ Coord StringToCoord(std::string coord) {
   return {8 - (coord[1] - 48), coord[0] - 97};
 }
 
-int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    PWSTR pCmdLine, int nCmdShow) {
   Stockfish stockfish;
   ChessBoard chessboard;
   g::Logger::init();
 
-  bool aiEnabled = false; 
+  bool aiEnabled = false;
   bool aiTurn = false;
   bool whiteTurn = true;
+
+  std::cout << "Hello World!" << std::endl;
 
   while (true) {
     chessboard.PrintBoard();
@@ -51,8 +55,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     }
 
     if (moveMade) {
-      if (!aiTurn)
-        stockfish.PlayMove(move);
+      if (!aiTurn) stockfish.PlayMove(move);
 
       whiteTurn = !whiteTurn;
       if (aiEnabled) aiTurn = !aiTurn;
