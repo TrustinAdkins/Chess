@@ -18,13 +18,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                     PWSTR pCmdLine, int nCmdShow) {
   Stockfish stockfish;
   ChessBoard chessboard;
-  g::Logger::init();
+  g::Logger::Init();
 
-  bool aiEnabled = false;
+  bool aiEnabled = true;
   bool aiTurn = false;
   bool whiteTurn = true;
-
-  std::cout << "Hello World!" << std::endl;
 
   while (true) {
     chessboard.PrintBoard();
@@ -67,6 +65,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     }
   }
 
-  g::Logger::deinit();
+  g::Logger::Deinit();
   return 0;
 }
